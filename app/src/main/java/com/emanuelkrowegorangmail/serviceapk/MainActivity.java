@@ -11,32 +11,33 @@ import android.widget.EditText;
 import android.widget.Toast;
 
     public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
         EditText editWaktu;
         Button tombolPlay;
         Button tombolStop;
+//Mendeklarasikan varible yang digunakan
 
-        @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+//Menghubungkan kelas java dengan kelas XML
 
             editWaktu = (EditText) findViewById(R.id.et_waktu);
             tombolPlay = (Button) findViewById(R.id.bt_play);
             tombolStop = (Button) findViewById(R.id.bt_stop);
-
             tombolPlay.setOnClickListener(this);
             tombolStop.setOnClickListener(this);
         }
 
-        @Override
         public void onClick(View view) {
             switch (view.getId()){
+                //Mendeklarasikan onclick
                 case R.id.bt_play:
                     callPlay();
                     break;
+                    //jika bt play di klik maka lagu diputar dan dibreak
                 case R.id.bt_stop:
                     stopPlay();
+                    //jika butoon stop diklik maka lagu akan di hentikan
             }
         }
 
